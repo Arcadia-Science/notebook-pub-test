@@ -1,5 +1,5 @@
 pub:
   org: "Arcadia-Science"
-  repo: "2025-raman-spectrometer-comparison"
-  title: "Comparison of spontaneous Raman spectrometers"
-  google_analytics_id: "G-G0FG8RPQPH"
+  repo: "notebook-pub-test"
+  title: "A test notebook pub"
+  google_analytics_id: ""

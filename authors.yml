@@ -1,34 +1,14 @@
 authors:
-- name: Tara Essock-Burns
-  orcid: 0000-0003-4159-6974
-  roles:
-  - Conceptualization
-  - Investigation
-  - Supervision
-- name: Ilya Kolb
-  orcid: 0000-0001-5100-849X
-  roles:
-  - Investigation
-  - Methodology
-- name: Ryan Lane
-  orcid: 0000-0002-5887-2069
-  roles:
-  - Conceptualization
-  - Data Curation
-  - Formal Analysis
-  - Software
-  - Visualization
-  - Writing
-- name: David G. Mets
-  orcid: 0000-0002-0803-0912
-  roles:
-  - Supervision
-- name: Sunanda Sharma
-  orcid: 0000-0001-8822-7960
-  roles:
-  - Conceptualization
-  - Formal Analysis
-  - Investigation
-  - Project Administration
-  - Software
-  - Visualization
+  - name: <author name as 'First M. Last'>
+    orcid: 0000-0000-0000-0000
+    roles:
+      - conceptualization
+      - formal analysis
+      - investigation
+      - methodology
+      - software
+  - name: <author name as 'First M. Last'>
+    orcid: 0000-0000-0000-0000
+    roles:
+      - data curation
+      - validation
