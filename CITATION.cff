@@ -1,51 +1,27 @@
 cff-version: 1.2.0
 message: If you use this software, please cite the associated publication.
-title: Comparison of spontaneous Raman spectrometers
-doi: 10.57844/arcadia-b670-4291
+title: Test Notebook Publication
+doi: 10.00000/test-0000-0000
 authors:
-- family-names: Essock-Burns
-  given-names: Tara
+- family-names: Doe
+  given-names: Jane
   affiliation: Arcadia Science
-  orcid: https://orcid.org/0000-0003-4159-6974
-- family-names: Kolb
-  given-names: Ilya
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: Doe
+  given-names: John
   affiliation: Arcadia Science
-  orcid: https://orcid.org/0000-0001-5100-849X
-- family-names: Lane
-  given-names: Ryan
-  affiliation: Arcadia Science
-  orcid: https://orcid.org/0000-0002-5887-2069
-- family-names: Mets
-  given-names: David G.
-  affiliation: Arcadia Science
-  orcid: https://orcid.org/0000-0002-0803-0912
-- family-names: Sharma
-  given-names: Sunanda
-  affiliation: Arcadia Science
-  orcid: https://orcid.org/0000-0001-8822-7960
+  orcid: https://orcid.org/0000-0000-0000-0001
 preferred-citation:
-  title: Comparison of spontaneous Raman spectrometers
+  title: Test Notebook Publication
   type: article
-  doi: 10.57844/arcadia-b670-4291
+  doi: 10.00000/test-0000-0000
   authors:
-  - family-names: Essock-Burns
-    given-names: Tara
+  - family-names: Doe
+    given-names: Jane
     affiliation: Arcadia Science
-    orcid: https://orcid.org/0000-0003-4159-6974
-  - family-names: Kolb
-    given-names: Ilya
+    orcid: https://orcid.org/0000-0000-0000-0000
+  - family-names: Doe
+    given-names: John
     affiliation: Arcadia Science
-    orcid: https://orcid.org/0000-0001-5100-849X
-  - family-names: Lane
-    given-names: Ryan
-    affiliation: Arcadia Science
-    orcid: https://orcid.org/0000-0002-5887-2069
-  - family-names: Mets
-    given-names: David G.
-    affiliation: Arcadia Science
-    orcid: https://orcid.org/0000-0002-0803-0912
-  - family-names: Sharma
-    given-names: Sunanda
-    affiliation: Arcadia Science
-    orcid: https://orcid.org/0000-0001-8822-7960
+    orcid: https://orcid.org/0000-0000-0000-0001
   year: 2025
