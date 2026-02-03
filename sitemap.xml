@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://Arcadia-Science.github.io/notebook-pub-test/index_v1.2.html</loc>
+    <lastmod>2026-02-03T23:11:14.155Z</lastmod>
+  </url>
+  <url>
     <loc>https://Arcadia-Science.github.io/notebook-pub-test/index_v1.0.html</loc>
-    <lastmod>2026-02-03T22:53:00.374Z</lastmod>
+    <lastmod>2026-02-03T23:11:14.127Z</lastmod>
   </url>
   <url>
     <loc>https://Arcadia-Science.github.io/notebook-pub-test/examples/demo.html</loc>
-    <lastmod>2026-02-03T22:53:00.240Z</lastmod>
+    <lastmod>2026-02-03T23:11:13.993Z</lastmod>
   </url>
   <url>
     <loc>https://Arcadia-Science.github.io/notebook-pub-test/pages/FAQ.html</loc>
-    <lastmod>2026-02-03T22:53:00.375Z</lastmod>
+    <lastmod>2026-02-03T23:11:14.156Z</lastmod>
   </url>
   <url>
     <loc>https://Arcadia-Science.github.io/notebook-pub-test/pages/CONTRIBUTING.html</loc>
-    <lastmod>2026-02-03T22:53:00.375Z</lastmod>
+    <lastmod>2026-02-03T23:11:14.156Z</lastmod>
   </url>
   <url>
     <loc>https://Arcadia-Science.github.io/notebook-pub-test/pages/SETUP.html</loc>
-    <lastmod>2026-02-03T22:53:00.375Z</lastmod>
+    <lastmod>2026-02-03T23:11:14.156Z</lastmod>
   </url>
   <url>
     <loc>https://Arcadia-Science.github.io/notebook-pub-test/index.html</loc>
-    <lastmod>2026-02-03T22:53:00.307Z</lastmod>
+    <lastmod>2026-02-03T23:11:14.061Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Arcadia-Science.github.io/notebook-pub-test/index_v1.1.html</loc>
+    <lastmod>2026-02-03T23:11:14.142Z</lastmod>
   </url>
 </urlset>

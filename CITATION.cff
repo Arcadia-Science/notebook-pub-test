@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: If you use this software, please cite the associated publication.
+title: Test Notebook Publication
+doi: 10.00000/test-0000-0000
+authors:
+- family-names: Doe
+  given-names: Jane
+  affiliation: Arcadia Science
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: Doe
+  given-names: John
+  affiliation: Arcadia Science
+  orcid: https://orcid.org/0000-0000-0000-0001
+preferred-citation:
+  title: Test Notebook Publication
+  type: article
+  doi: 10.00000/test-0000-0000
+  authors:
+  - family-names: Doe
+    given-names: Jane
+    affiliation: Arcadia Science
+    orcid: https://orcid.org/0000-0000-0000-0000
+  - family-names: Doe
+    given-names: John
+    affiliation: Arcadia Science
+    orcid: https://orcid.org/0000-0000-0000-0001
+  year: 2025
