@@ -32,7 +32,7 @@ Two new workflows that form a parallel path to publishing:
 ┌─────────────────────────────────────────────────────────────────────┐
 │ THEME UPDATE PATH (new)                                             │
 │                                                                     │
-│   Daily check → update-theme.yml → PR → publish-theme-change.yml → gh-pages │
+│   Daily check → check-theme-updates.yml → PR → publish-theme-change.yml → gh-pages │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -42,7 +42,7 @@ These paths are completely independent. Theme updates sync only `_extensions/` t
 
 ## Workflow Specifications
 
-### Workflow 1: `update-theme.yml`
+### Workflow 1: `check-theme-updates.yml`
 
 **Purpose:** Daily check for theme updates; create a PR if one is available.
 

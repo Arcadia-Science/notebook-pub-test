@@ -1,4 +1,4 @@
-name: Update Theme
+name: Check Theme Updates
 
 on:
   schedule:
@@ -10,7 +10,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  update-theme:
+  check-theme-updates:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -52,9 +52,9 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           branch: auto/theme-update
+          commit-message: "[Theme] Update arcadia-pub-theme ${{ steps.current.outputs.version }} → ${{ steps.latest.outputs.version }}"
           delete-branch: true
-          title: "chore(deps): update arcadia-pub-theme ${{ steps.current.outputs.version }} → ${{ steps.latest.outputs.version }}"
-          labels: dependencies,quarto
+          title: "[Theme] Update arcadia-pub-theme ${{ steps.current.outputs.version }} → ${{ steps.latest.outputs.version }}"
           body: |
             Updates `arcadia-pub-theme` from ${{ steps.current.outputs.version }} to ${{ steps.latest.outputs.version }}.
 
