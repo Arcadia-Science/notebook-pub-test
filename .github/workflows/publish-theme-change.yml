@@ -1,0 +1,70 @@
+name: Publish Theme Change
+
+on:
+  push:
+    branches: [main]
+    paths: ['_extensions/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish-theme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for in-flight content release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          OPEN_PRS=$(gh pr list --repo ${{ github.repository }} --base publish --state open --json number --jq 'length')
+          if [ "$OPEN_PRS" -gt 0 ]; then
+            echo "Content release PR in progress, skipping theme sync"
+            echo "Theme update will be included when the content release merges"
+            exit 0
+          fi
+
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main-branch
+
+      - name: Checkout publish branch
+        uses: actions/checkout@v4
+        with:
+          ref: publish
+          path: publish-branch
+
+      - name: Sync theme to publish branch
+        run: |
+          rm -rf publish-branch/_extensions
+          cp -r main-branch/_extensions publish-branch/_extensions
+
+      - name: Commit and push to publish
+        id: commit
+        run: |
+          cd publish-branch
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _extensions
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            git commit -m "chore: sync theme from main"
+            git push origin publish
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Set up Quarto
+        if: steps.commit.outputs.changed == 'true'
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render and publish
+        if: steps.commit.outputs.changed == 'true'
+        run: |
+          cd publish-branch
+          quarto publish gh-pages --no-prompt
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

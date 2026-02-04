@@ -1,0 +1,63 @@
+name: Update Theme
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-theme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Get current theme version
+        id: current
+        run: |
+          VERSION=$(grep '^version:' _extensions/Arcadia-Science/arcadia-pub-theme/_extension.yml | cut -d' ' -f2)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Get latest theme version
+        id: latest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=$(gh api repos/Arcadia-Science/notebook-pub-theme/releases/latest --jq '.tag_name' | sed 's/^v//')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Check if update needed
+        id: check
+        run: |
+          if [ "${{ steps.current.outputs.version }}" = "${{ steps.latest.outputs.version }}" ]; then
+            echo "Theme is already up to date (${{ steps.current.outputs.version }})"
+            echo "needed=false" >> $GITHUB_OUTPUT
+          else
+            echo "Update available: ${{ steps.current.outputs.version }} → ${{ steps.latest.outputs.version }}"
+            echo "needed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update theme
+        if: steps.check.outputs.needed == 'true'
+        run: make update-theme
+
+      - name: Create PR
+        if: steps.check.outputs.needed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: auto/theme-update
+          delete-branch: true
+          title: "chore(deps): update arcadia-pub-theme ${{ steps.current.outputs.version }} → ${{ steps.latest.outputs.version }}"
+          labels: dependencies,quarto
+          body: |
+            Updates `arcadia-pub-theme` from ${{ steps.current.outputs.version }} to ${{ steps.latest.outputs.version }}.
+
+            **Release notes:** https://github.com/Arcadia-Science/notebook-pub-theme/releases/tag/v${{ steps.latest.outputs.version }}
+
+            **Changelog:** https://github.com/Arcadia-Science/notebook-pub-theme/blob/main/CHANGELOG.md
